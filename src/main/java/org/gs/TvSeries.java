@@ -1,12 +1,23 @@
 package org.gs;
 
+import io.smallrye.config.ConfigMapping;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
+
 import java.net.URL;
 
+@ConfigMapping(prefix = "tvSeries")
 public class TvSeries {
 
+    @ConfigProperty(name = "name", defaultValue = "Lupin")
     private String name;
+
+    @ConfigProperty(name = "summary", defaultValue = "Lupin is the best tv series in France")
     private String summary;
+
+    @ConfigProperty(name = "language", defaultValue = "FR")
     private String language;
+
+    @ConfigProperty(name = "officialSite", defaultValue = "https://www.netflix.com/lupin")
     private URL officialSite;
 
     public String getName() {
